@@ -13,8 +13,8 @@ export class PokemonService {
 
   constructor(private _http: HttpClient) { }
 
-  getListPokemon(): Observable<any> {
-    return this._http.get<any>(this.API).pipe(
+  getListPokemon(params: string = ''): Observable<any> {
+    return this._http.get<any>(`${this.API}/${params}`).pipe(
       // delay(1000),
       // tap(res=> res),
       tap(res => {
@@ -35,7 +35,4 @@ export class PokemonService {
       )
     )
   }
-
-  //   return this._http.get(`${this.API}/${id}`);
-  // }
 }

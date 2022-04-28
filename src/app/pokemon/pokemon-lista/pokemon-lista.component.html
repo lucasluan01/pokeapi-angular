@@ -11,6 +11,11 @@
         </app-pokemon-cartao>
     </div>
 
+<div class="previous-next">
+    <button class="previous" [disabled]="!previousPage" (click)="previous()">Anterior</button>
+    <button class="next" [disabled]="!nextPage" (click)="next()">Próximo</button>
+</div>
+
 <ng-template #loading>
     <span>Carregando Cursos...</span>
 </ng-template>

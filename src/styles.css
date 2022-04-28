@@ -116,5 +116,20 @@
     border-radius: 10px;
     text-transform: capitalize;
     text-align: center;
-    /* margin-bottom: 10px; */
+}
+
+.previous-next {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.previous-next > button {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
 }

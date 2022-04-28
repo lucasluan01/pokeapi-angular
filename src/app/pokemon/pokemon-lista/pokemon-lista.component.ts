@@ -20,12 +20,28 @@ export class PokemonListaComponent implements OnInit {
   ngOnInit(): void {
     this.service.getListPokemon().subscribe(dados => {
       this.pokemons = dados.results;
-      this.nextPage = dados.next;
-      this.previousPage = dados.previous;
+      this.nextPage = dados.next?.split('pokemon/')[1];
+      this.previousPage = dados.previous?.split('pokemon/')[1];
 
       console.log(this.nextPage);
       console.log(this.previousPage);
       console.log(this.pokemons)
+    });
+  }
+
+  next() {
+    this.service.getListPokemon(this.nextPage).subscribe(dados => {
+      this.pokemons = dados.results;
+      this.nextPage = dados.next?.split('pokemon/')[1];
+      this.previousPage = dados.previous?.split('pokemon/')[1];
+    });
+  }
+
+  previous() {
+    this.service.getListPokemon(this.previousPage).subscribe(dados => {
+      this.pokemons = dados.results;
+      this.nextPage = dados.next?.split('pokemon/')[1];
+      this.previousPage = dados.previous?.split('pokemon/')[1];
     });
   }
 
