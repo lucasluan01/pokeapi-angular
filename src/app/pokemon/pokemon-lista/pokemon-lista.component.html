@@ -1,0 +1,16 @@
+<!-- <form>
+    <div class="pesquisa">
+        <input type="text" name="" id="" placeholder="Buscar por nome ou id" #entrada>
+        <button (click)="emitirValor(entrada.value)">Buscar</button>
+    </div>
+</form> -->
+    <div class="lista-pokemon" *ngIf="pokemons; else loading">
+        <app-pokemon-cartao *ngFor="let pokemon of pokemons" [nomePokemon]="pokemon.name"
+            [imagemPokemon]="pokemon['infoBasic']['sprites']['other']['dream_world']['front_default']"
+            [tipoPokemon]="pokemon['infoBasic']['types'][0]['type']['name']">
+        </app-pokemon-cartao>
+    </div>
+
+<ng-template #loading>
+    <span>Carregando Cursos...</span>
+</ng-template>

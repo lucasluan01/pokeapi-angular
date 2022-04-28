@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+
+.card-pokemon {
+    height: 300px;
+    width: 200px;
+    background-color: #ff000050;
+}

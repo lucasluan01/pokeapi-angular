@@ -1,1 +1,120 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100...900');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bg-bug {
+    background-color: #84C40075;
+}
+
+.bg-dark {
+    background-color: #5A536675;
+}
+
+.bg-dragon {
+    background-color: #0070CA75;
+}
+
+.bg-electric {
+    background-color: #FBD20075;
+}
+
+.bg-fairy {
+    background-color: #FB8AEC75;
+}
+
+.bg-fighting {
+    background-color: #E12C6A75;
+}
+
+.bg-fire {
+    background-color: #FF983F75;
+}
+
+.bg-flying {
+    background-color: #8AABE475;
+}
+
+.bg-ghost {
+    background-color: #4B6AB375;
+}
+
+.bg-grass {
+    background-color: #35C04A75;
+}
+
+.bg-ground {
+    background-color: #E9733375;
+}
+
+.bg-ice {
+    background-color: #4BD2C175;
+}
+
+.bg-normal {
+    background-color: #929BA375;
+}
+
+.bg-poison {
+    background-color: #B667CF75;
+}
+
+.bg-psychic {
+    background-color: #FF667675;
+}
+
+.bg-rock {
+    background-color: #C9B78775;
+}
+
+.bg-steel {
+    background-color: #5A8EA175;
+}
+
+.bg-water {
+    background-color: #3393DD75;
+}
+
+.lista-pokemon {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.cartao-pokemon {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.imagem-pokemon >img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.info-pokemon > .nome-pokemon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.info-pokemon > .tipo-pokemon {
+    padding: 2px 8px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-transform: capitalize;
+    text-align: center;
+    /* margin-bottom: 10px; */
+}
