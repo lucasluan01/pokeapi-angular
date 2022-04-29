@@ -27,6 +27,8 @@ export class PokemonListaComponent implements OnInit {
       console.log(this.previousPage);
       console.log(this.pokemons)
     });
+
+    this.toggleDarkTheme();
   }
 
   next() {
@@ -45,4 +47,7 @@ export class PokemonListaComponent implements OnInit {
     });
   }
 
+  toggleDarkTheme(): void {
+    document.body.classList.toggle('dark');
+  }
 }

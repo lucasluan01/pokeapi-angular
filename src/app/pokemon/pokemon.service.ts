@@ -15,7 +15,7 @@ export class PokemonService {
 
   getListPokemon(params: string = ''): Observable<any> {
     return this._http.get<any>(`${this.API}/${params}`).pipe(
-      // delay(1000),
+      // delay(5000),
       // tap(res=> res),
       tap(res => {
         console.log(res)
@@ -29,10 +29,6 @@ export class PokemonService {
   }
 
   getInfoBasic(url: string): Observable<any> {
-    return this._http.get<any>(url).pipe( 
-      map(
-        res => res
-      )
-    )
+    return this._http.get<any>(url)
   }
 }
