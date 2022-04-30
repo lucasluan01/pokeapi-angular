@@ -19,15 +19,15 @@
     </button>
 </div>
 <div class="lista-pokemon container" *ngIf="pokemons; else loading">
-    <app-pokemon-cartao *ngFor="let pokemon of pokemons" [nomePokemon]="pokemon.name"
-        [imagemPokemon]="pokemon['infoBasic']['sprites']['other']['dream_world']['front_default']"
-        [tipoPokemon]="pokemon['infoBasic']['types'][0]['type']['name']">
+    <app-pokemon-cartao *ngFor="let pokemon of pokemons" [nomePokemon]="pokemon['name']"
+        [imagemPokemon]="pokemon['image']"
+        [tipoPokemon]="pokemon['type']">
     </app-pokemon-cartao>
 </div>
 
 <div class="previous-next container">
-    <button class="previous" [disabled]="!previousPage" (click)="previous()">Anterior</button>
-    <button class="next" [disabled]="!nextPage" (click)="next()">Próximo</button>
+    <button class="previous" [disabled]="!previousPage" (click)="onPreviousPage()">Anterior</button>
+    <button class="next" [disabled]="!nextPage" (click)="onNextPage()">Próximo</button>
 </div>
 
 <ng-template #loading>

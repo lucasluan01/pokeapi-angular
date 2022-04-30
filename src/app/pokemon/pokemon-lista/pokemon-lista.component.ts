@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 import { PokemonService } from './../pokemon.service';
 
@@ -14,40 +14,33 @@ export class PokemonListaComponent implements OnInit {
   pokemons: any;
   nextPage: any;
   previousPage: any;
-
+  
   constructor(private service: PokemonService) { }
 
   ngOnInit(): void {
-    this.service.getListPokemon().subscribe(dados => {
-      this.pokemons = dados.results;
-      this.nextPage = dados.next?.split('pokemon/')[1];
-      this.previousPage = dados.previous?.split('pokemon/')[1];
-
-      console.log(this.nextPage);
-      console.log(this.previousPage);
-      console.log(this.pokemons)
-    });
-
+    this.onPokemons();
     this.toggleDarkTheme();
-  }
-
-  next() {
-    this.service.getListPokemon(this.nextPage).subscribe(dados => {
-      this.pokemons = dados.results;
-      this.nextPage = dados.next?.split('pokemon/')[1];
-      this.previousPage = dados.previous?.split('pokemon/')[1];
-    });
-  }
-
-  previous() {
-    this.service.getListPokemon(this.previousPage).subscribe(dados => {
-      this.pokemons = dados.results;
-      this.nextPage = dados.next?.split('pokemon/')[1];
-      this.previousPage = dados.previous?.split('pokemon/')[1];
-    });
   }
 
   toggleDarkTheme(): void {
     document.body.classList.toggle('dark');
+  }
+
+  onNextPage(): void {
+    this.onPokemons(this.nextPage);
+
+  }
+
+  onPreviousPage(): void {
+    this.onPokemons(this.previousPage);
+  }
+
+  onPokemons(url?: string): void {
+    this.service.getInfoBasic(url).subscribe(
+      (dataPage: any) => {
+        this.pokemons = dataPage.results;
+        this.nextPage = dataPage.next;
+        this.previousPage = dataPage.previous;
+      });
   }
 }
