@@ -43,4 +43,20 @@ export class PokemonListaComponent implements OnInit {
         this.previousPage = dataPage.previous;
       });
   }
+
+  onSearch(param: string): void {
+    if(param) {
+      this.nextPage = null;
+      this.previousPage = null;
+      console.log(param),
+        this.service.getOnSearch(param).subscribe(
+          (dataPage: any) => {
+            this.pokemons = [dataPage];
+            console.log(this.pokemons);
+          });
+    }
+    else {
+      this.onPokemons();
+    }
+  }
 }

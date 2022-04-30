@@ -146,6 +146,8 @@ header {
   border-radius: 10px;
   gap: 20px;
   box-sizing: border-box;
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .imagem-pokemon > img {

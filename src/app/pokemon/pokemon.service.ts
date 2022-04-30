@@ -56,5 +56,18 @@ export class PokemonService {
     );
   }
 
+  getOnSearch(url: string): Observable<any> {
+    this._nexPage = null;
+    this._previousPage = null;
+    return this.getPokemon(url).pipe(
+      tap(pokemon => {
+        pokemon.id = pokemon['id'];
+        pokemon.type = pokemon['types'][0]['type']['name'];
+        pokemon.image = pokemon['sprites']['other']['dream_world']['front_default'];
+        pokemon.name = pokemon['name'];
+      })
+    );
+  }
+
 }
 
