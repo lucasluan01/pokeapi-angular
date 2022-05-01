@@ -14,6 +14,9 @@ export class PokemonListaComponent implements OnInit {
   pokemons: any;
   nextPage: any;
   previousPage: any;
+
+  optionsNumItems: number[] = [10, 20, 30, 40, 50];
+  numItemsPage = 20;
   
   constructor(private service: PokemonService) { }
 
@@ -35,12 +38,12 @@ export class PokemonListaComponent implements OnInit {
     this.onPokemons(this.previousPage);
   }
 
-  onPokemons(url?: string): void {
-    this.service.getInfoBasic(url).subscribe(
+  onPokemons(offset: number = 0): void {
+    this.service.getInfoBasic(offset, this.numItemsPage).subscribe(
       (dataPage: any) => {
         this.pokemons = dataPage.results;
-        this.nextPage = dataPage.next;
-        this.previousPage = dataPage.previous;
+        this.nextPage = dataPage.next.split('offset=')[1].split('&limit=')[0];
+        this.previousPage = dataPage.previous?.split('offset=')[1].split('&limit=')[0];
       });
   }
 
@@ -59,4 +62,10 @@ export class PokemonListaComponent implements OnInit {
       this.onPokemons();
     }
   }
+
+  setNumItemsPage(opt: any): void {
+    this.numItemsPage = opt.target.value;
+    this.onPokemons();
+  }
+
 }

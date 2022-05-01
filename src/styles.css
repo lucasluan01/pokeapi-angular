@@ -146,7 +146,7 @@ header {
   border-radius: 10px;
   gap: 20px;
   box-sizing: border-box;
-  max-width: 450px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -255,9 +255,9 @@ input:checked + .slider:before {
 }
 
 .pesquisa {
-  display: grid;
-  grid-template-columns: minmax(250px, 400px) 50px;
+  display: flex;
   justify-content: center;
+  grid-column: 2;
 }
 
 .pesquisa > button {
@@ -273,9 +273,22 @@ input:checked + .slider:before {
   font-size: 1rem;
   border-radius: 5px 0 0 5px;
   padding: 5px 10px;
+  flex: 0 1 300px;
 }
 
 .pesquisa > button > svg {
   fill: var(--body-color);
   height: 20px;
+}
+
+.nomeTemp {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+}
+
+.option-num-items {
+  grid-column: 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

@@ -20,8 +20,8 @@ export class PokemonService {
   //   return this._http.get<any>(`${this.API}?offset=${offset}&limit=${limit}`)
   // }
 
-  getPage(url: string): Observable<any> {
-    return this._http.get<any>(url)
+  getPage(offset: number, limit: number): Observable<any> {
+    return this._http.get<any>(`${this.API}?offset=${offset}&limit=${limit}`)
   }
 
   getNextPage(): string {
@@ -36,8 +36,8 @@ export class PokemonService {
     return this._http.get<any>(`${this.API}/${pokemon}`);
   }
 
-  getInfoBasic(url: string = this.API): Observable<any> {
-    return this.getPage(url).pipe(
+  getInfoBasic(offset: number, limit: number): Observable<any> {
+    return this.getPage(offset, limit).pipe(
       tap(dataPage => {
         this._nexPage = dataPage.next;
         this._previousPage = dataPage.previous;
