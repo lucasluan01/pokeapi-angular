@@ -159,6 +159,12 @@ header {
   box-sizing: border-box;
   max-width: 400px;
   margin: 0 auto;
+  transition: none;
+}
+
+.cartao-pokemon:hover {
+  transition: 0.2s;
+  opacity: 0.6;
 }
 
 .imagem-pokemon > img {
@@ -278,6 +284,7 @@ input:checked + .slider:before {
 
 .pesquisa > button {
   border-radius: 0 5px 5px 0;
+  padding: 10px 5px;
 }
 
 .pesquisa > input {
