@@ -15,11 +15,6 @@ export class PokemonService {
 
   constructor(private _http: HttpClient) { }
 
-
-  // getPage(offset: number = 0, limit: number = 30): Observable<any> {
-  //   return this._http.get<any>(`${this.API}?offset=${offset}&limit=${limit}`)
-  // }
-
   getPage(offset: number, limit: number): Observable<any> {
     return this._http.get<any>(`${this.API}?offset=${offset}&limit=${limit}`)
   }

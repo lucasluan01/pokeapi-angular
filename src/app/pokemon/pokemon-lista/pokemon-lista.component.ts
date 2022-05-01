@@ -15,18 +15,17 @@ export class PokemonListaComponent implements OnInit {
   nextPage: any;
   previousPage: any;
 
-  optionsNumItems: number[] = [10, 20, 30, 40, 50];
+  optionsNumItems: number[] = [10, 20, 30, 40, 50, 100, 150, 200];
   numItemsPage = 20;
   
   constructor(private service: PokemonService) { }
 
   ngOnInit(): void {
     this.onPokemons();
-    this.toggleDarkTheme();
   }
 
   toggleDarkTheme(): void {
-    document.body.classList.toggle('dark');
+    document.body.classList.toggle('light');
   }
 
   onNextPage(): void {
@@ -42,7 +41,7 @@ export class PokemonListaComponent implements OnInit {
     this.service.getInfoBasic(offset, this.numItemsPage).subscribe(
       (dataPage: any) => {
         this.pokemons = dataPage.results;
-        this.nextPage = dataPage.next.split('offset=')[1].split('&limit=')[0];
+        this.nextPage = dataPage.next?.split('offset=')[1].split('&limit=')[0];
         this.previousPage = dataPage.previous?.split('offset=')[1].split('&limit=')[0];
       });
   }

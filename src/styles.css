@@ -2,6 +2,10 @@
 
 * {
   font-family: 'Montserrat', sans-serif;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  font-size: 1rem;
+  margin: 0;
 }
 
 .bg-bug {
@@ -77,24 +81,23 @@
 }
 
 :root {
-  --body-color: white;
-  --text-color: black;
-  --button-color: #3c5aa6;
-  --input-color: white;
-  --tran-05: all 0.4s ease;
+  --body-color: #18191a;
+  --text-color: white;
+  --input-color: #252628;
+  --button-color: #ffcb05;
+  --transition: all 1s ease;
 }
 
 body {
   height: 100vh;
   background-color: var(--body-color);
-  transition: var(--tran-05);
 }
 
-body.dark {
-  --body-color: #18191a;
-  --text-color: white;
-  --input-color: #252628;
-  --button-color: #ffcb05;
+body.light {
+  --body-color: white;
+  --text-color: black;
+  --button-color: #3c5aa6;
+  --input-color: white;
 }
 
 button {
@@ -104,13 +107,21 @@ button {
   outline: none;
   cursor: pointer;
   border-radius: 5px;
-  padding: 10px 5px;
+  padding: 10px 15px;
   font-weight: bold;
+  transition: var(--transition);
 }
 
 button:disabled {
   background-color: var(--button-color);
   opacity: 0.5;
+}
+
+button:hover {
+  background-color: var(--button-color);
+  color: var(--body-color);
+  filter: brightness(125%);
+  transition: none;
 }
 
 header {
@@ -156,10 +167,17 @@ header {
   object-fit: contain;
 }
 
-.info-pokemon > .nome-pokemon {
+.info-pokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-pokemon > .nome-pokemon, .id-pokemon {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 10px;
   text-transform: capitalize;
 }
 
@@ -167,7 +185,6 @@ header {
   padding: 2px 8px;
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: var(--tran-05);
   border-radius: 10px;
   text-transform: capitalize;
   text-align: center;
@@ -190,7 +207,6 @@ header {
 }
 
 .modo-dark > span {
-  font-size: 1rem;
   color: var(--text-color);
 }
 
@@ -215,8 +231,8 @@ header {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .slider:before {
@@ -227,8 +243,8 @@ header {
   left: 2px;
   bottom: 2px;
   background-color: var(--body-color);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 input:checked + .slider {
@@ -266,11 +282,9 @@ input:checked + .slider:before {
 
 .pesquisa > input {
   border: 2px solid var(--button-color);
-  background-color: #252628;
   background-color: var(--input-color);
   color: var(--text-color);
   outline: none;
-  font-size: 1rem;
   border-radius: 5px 0 0 5px;
   padding: 5px 10px;
   flex: 0 1 300px;
@@ -279,16 +293,35 @@ input:checked + .slider:before {
 .pesquisa > button > svg {
   fill: var(--body-color);
   height: 20px;
+  transition: none;
 }
 
 .nomeTemp {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(250px, 1fr));
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .option-num-items {
-  grid-column: 3;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 20px;
+}
+
+.option-num-items > label {
+  color: var(--text-color);
+}
+
+.option-num-items > select {
+  background-color: var(--input-color);
+  outline: none;
+  padding: 5px 15px;
+  border-radius: 6px;
+  color: var(--text-color);
+}
+
+.option-num-items > select > option:is(:active, :checked, :focus, :hover) {
+  background-color: var(--button-color);
+  color: var(--body-color);
 }

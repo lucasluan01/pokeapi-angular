@@ -21,7 +21,7 @@
         </button>
     </div>
     <div class="option-num-items">
-        <label for="cars">Num items</label>
+        <label for="cars">Items number:</label>
         <select name="valueCheck" (change)="setNumItemsPage($event)">
             <option *ngFor="let opt of optionsNumItems" [value]="opt" [selected]="opt == numItemsPage">
                 {{ opt }}
@@ -32,7 +32,7 @@
 
 <div class="lista-pokemon container" *ngIf="pokemons; else loading">
     <app-pokemon-cartao *ngFor="let pokemon of pokemons" [nomePokemon]="pokemon['name']"
-        [imagemPokemon]="pokemon['image']" [tipoPokemon]="pokemon['type']">
+        [imagemPokemon]="pokemon['image']" [tipoPokemon]="pokemon['type']" [idPokemon]="pokemon['id']">
     </app-pokemon-cartao>
 </div>
 

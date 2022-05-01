@@ -16,6 +16,9 @@ export class PokemonCartaoComponent implements OnInit {
   @Input()
   tipoPokemon: string = "";
 
+  @Input()
+  idPokemon: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
