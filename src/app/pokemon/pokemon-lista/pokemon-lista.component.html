@@ -31,8 +31,18 @@
 </div>
 
 <div class="lista-pokemon container" *ngIf="pokemons; else loading">
-    <app-pokemon-cartao *ngFor="let pokemon of pokemons" [nomePokemon]="pokemon['name']"
-        [imagemPokemon]="pokemon['image']" [tipoPokemon]="pokemon['type']" [idPokemon]="pokemon['id']">
+    <app-pokemon-cartao *ngFor="let pokemon of pokemons"
+        [nomePokemon]="pokemon?.name"
+        [imagemPokemon]="pokemon?.image" 
+        [tipoPokemon]="pokemon?.type" 
+        [idPokemon]="pokemon?.id"
+        [hp]="pokemon?.baseStats?.hp"
+        [attack]="pokemon?.baseStats?.attack"
+        [defense]="pokemon?.baseStats?.defense"
+        [speed]="pokemon?.baseStats?.speed"
+        [specialAttack]="pokemon?.baseStats?.specialAttack"
+        [specialDefense]="pokemon?.baseStats?.specialDefense"
+    >  
     </app-pokemon-cartao>
 </div>
 

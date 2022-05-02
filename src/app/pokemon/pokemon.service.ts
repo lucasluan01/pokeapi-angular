@@ -43,10 +43,19 @@ export class PokemonService {
                 pokemon.id = infoBasic['id'];
                 pokemon.type = infoBasic['types'][0]['type']['name'];
                 pokemon.image = infoBasic['sprites']['other']['dream_world']['front_default'];
+                pokemon.baseStats = {
+                  hp: infoBasic['stats'][0]['base_stat'],
+                  attack: infoBasic['stats'][1]['base_stat'],
+                  defense: infoBasic['stats'][2]['base_stat'],
+                  specialAttack: infoBasic['stats'][3]['base_stat'],
+                  specialDefense: infoBasic['stats'][4]['base_stat'],
+                  speed: infoBasic['stats'][5]['base_stat']
+                };
               }
             )
           }
         )
+        console.log(dataPage);
       })
     );
   }
@@ -60,6 +69,14 @@ export class PokemonService {
         pokemon.type = pokemon['types'][0]['type']['name'];
         pokemon.image = pokemon['sprites']['other']['dream_world']['front_default'];
         pokemon.name = pokemon['name'];
+        pokemon.baseStats = {
+          hp: pokemon['stats'][0]['base_stat'],
+          attack: pokemon['stats'][1]['base_stat'],
+          defense: pokemon['stats'][2]['base_stat'],
+          specialAttack: pokemon['stats'][3]['base_stat'],
+          specialDefense: pokemon['stats'][4]['base_stat'],
+          speed: pokemon['stats'][5]['base_stat']
+        };
       })
     );
   }

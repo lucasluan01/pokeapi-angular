@@ -17,11 +17,28 @@ export class PokemonCartaoComponent implements OnInit {
   tipoPokemon: string = "";
 
   @Input()
-  idPokemon: number = 0;
+  idPokemon: string = "";
+
+  @Input()
+  hp: string = "";
+
+  @Input()
+  attack: string = "";
+
+  @Input()
+  defense: string = "";
+
+  @Input()
+  speed: string = "";
+
+  @Input()
+  specialAttack: string = "";
+
+  @Input()
+  specialDefense: string = "";
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

@@ -1,10 +1,60 @@
-<div class="cartao-pokemon bg-{{ tipoPokemon}}">
-    <div class="info-pokemon">
-        <p class="id-pokemon"> #{{ idPokemon }}</p>
-        <p class="nome-pokemon">{{ nomePokemon }}</p>
-        <p class="tipo-pokemon">{{ tipoPokemon }}</p>
-    </div>
-    <div class="imagem-pokemon">
-        <img src="{{ imagemPokemon }}" alt="">
+<div class="flip-card bg-{{ tipoPokemon }}">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <div class="info-pokemon">
+                <p class=""> #{{ idPokemon }}</p>
+                <p class="">{{ nomePokemon }}</p>
+                <p class="tipo-pokemon">{{ tipoPokemon }}</p>
+            </div>
+            <div class="imagem-pokemon">
+                <img src="{{ imagemPokemon }}" alt="">
+            </div>
+            </div>
+            <div class="flip-card-back" style="color: black;">
+                <div class="base-stats">
+                    <div class="stats">
+                        <span>HP</span>
+                        <span>{{ hp }}</span>
+                        <div class="progress-bar">
+                            <span class="progress-value"  [style.width.%]="hp"></span>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <span>Attack</span>
+                        <span>{{ attack }}</span>
+                        <div class="progress-bar">
+                            <span class="progress-value" [style.width.%]="attack"></span>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <span>Defense</span>
+                        <span>{{ defense }}</span>
+                        <div class="progress-bar">
+                            <span class="progress-value" [style.width.%]="defense"></span>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <span>Speed</span>
+                        <span>{{ speed }}</span>
+                        <div class="progress-bar">
+                            <span class="progress-value" [style.width.%]="speed"></span>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <span>Sp. Attack</span>
+                        <span>{{ specialAttack }}</span>
+                        <div class="progress-bar">
+                            <span class="progress-value" [style.width.%]="specialAttack"></span>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <span>Sp. Defense</span>
+                        <span>{{ specialDefense }}</span>
+                        <div class="progress-bar">
+                            <span class="progress-value" [style.width.%]="specialDefense"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 </div>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, map } from 'rxjs';
 
 import { PokemonService } from './../pokemon.service';
 
@@ -50,11 +49,9 @@ export class PokemonListaComponent implements OnInit {
     if(param) {
       this.nextPage = null;
       this.previousPage = null;
-      console.log(param),
-        this.service.getOnSearch(param).subscribe(
+        this.service.getOnSearch(param.toLowerCase().trim()).subscribe(
           (dataPage: any) => {
             this.pokemons = [dataPage];
-            console.log(this.pokemons);
           });
     }
     else {
