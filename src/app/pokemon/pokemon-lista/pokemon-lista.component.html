@@ -20,14 +20,15 @@
             </svg>
         </button>
     </div>
-    <div class="option-num-items">
-        <label for="cars">Items number:</label>
-        <select name="valueCheck" (change)="setNumItemsPage($event)">
-            <option *ngFor="let opt of optionsNumItems" [value]="opt" [selected]="opt == numItemsPage">
-                {{ opt }}
-            </option>
-        </select>
-    </div>
+</div>
+
+<div class="container option-num-items">
+    <label for="cars">Items per page:</label>
+    <select name="valueCheck" (change)="setNumItemsPage($event)">
+        <option *ngFor="let opt of optionsNumItems" [value]="opt" [selected]="opt == numItemsPage">
+            {{ opt }}
+        </option>
+    </select>
 </div>
 
 <div class="lista-pokemon container" *ngIf="pokemons; else loading">
