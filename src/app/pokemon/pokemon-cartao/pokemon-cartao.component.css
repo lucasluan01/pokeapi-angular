@@ -1,0 +1,188 @@
+
+.bg-bug {
+  background-color: #90c12c;
+}
+
+.bg-dark {
+  background-color: #5a5366;
+}
+
+.bg-dragon {
+  background-color: #0a6dc4;
+}
+
+.bg-electric {
+  background-color: #f3d23b;
+}
+
+.bg-fairy {
+  background-color: #ec8fe6;
+}
+
+.bg-fighting {
+  background-color: #ce4069;
+}
+
+.bg-fire {
+  background-color: #e5613e;
+}
+
+.bg-flying {
+  background-color: #8fa8dd;
+}
+
+.bg-ghost {
+  background-color: #6f4570;
+}
+
+.bg-grass {
+  background-color: #63bb5b;
+}
+
+.bg-ground {
+  background-color: #d97746;
+}
+
+.bg-ice {
+  background-color: #75cfc1;
+}
+
+.bg-normal {
+  background-color: #9099a1;
+}
+
+.bg-poison {
+  background-color: #ab6ac8;
+}
+
+.bg-psychic {
+  background-color: #f97176;
+}
+
+.bg-rock {
+  background-color: #c7b78b;
+}
+
+.bg-steel {
+  background-color: #5a8ea1;
+}
+
+.bg-water {
+  background-color: #4d90d5;
+}
+
+.flip-card {
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+  transition: none;
+  min-height: 144px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.flip-card-inner {
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 108px;
+  border-radius: 10px;
+}
+
+
+.info-pokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-pokemon {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.info-pokemon .tipo-pokemon {
+  padding: 2px 8px;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: normal;
+}
+
+.imagem-pokemon img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.base-stats {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.base-stats .stats {
+  display: grid;
+  grid-template-columns: 2fr 1fr 3fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.base-stats .stats span {
+  font-size: 0.7rem;
+  text-transform: capitalize;
+}
+
+.base-stats .stats span:nth-child(1) {
+  font-weight: bold;
+  text-align: end;
+}
+
+.progress-bar {
+  height: 4px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+}
+
+.progress-value {
+  background-color: #3c5aa6;
+  height: 4px;
+  border-radius: 10px;
+  display: inline-block;
+}
+

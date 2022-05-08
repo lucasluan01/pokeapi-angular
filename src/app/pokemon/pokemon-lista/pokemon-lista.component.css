@@ -1,0 +1,155 @@
+.pesquisa {
+  display: flex;
+  justify-content: center;
+  grid-column: 2;
+}
+
+.pesquisa button {
+  border-radius: 0 5px 5px 0;
+  padding: 10px 5px;
+}
+
+.pesquisa input {
+  border: 2px solid var(--button-color);
+  background-color: var(--input-color);
+  color: var(--text-color);
+  outline: none;
+  border-radius: 5px 0 0 5px;
+  padding: 5px 10px;
+  flex: 0 1 300px;
+}
+
+.pesquisa button svg {
+  fill: var(--body-color);
+  height: 20px;
+  transition: none;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--body-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+input:checked + .slider {
+  background-color: #ccc;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ccc;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.option-num-items {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.option-num-items label {
+  color: var(--text-color);
+}
+
+.option-num-items select {
+  background-color: var(--input-color);
+  outline: none;
+  padding: 5px 15px;
+  border-radius: 6px;
+  color: var(--text-color);
+}
+
+.option-num-items select option:is(:active, :checked, :focus, :hover) {
+  background-color: var(--button-color);
+  color: var(--body-color);
+}
+
+.logo-pokemon {
+  grid-column-start: 2;
+  justify-self: center;
+  height: 125px;
+}
+
+.container {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.lista-pokemon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.previous-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.modo-dark {
+  display: flex;
+  align-self: center;
+  margin: auto 0;
+  align-items: center;
+  justify-self: center;
+  gap: 10px;
+}
+
+.modo-dark span {
+  color: var(--text-color);
+}
+
+.loading {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading ::ng-deep .mat-progress-spinner circle {
+  stroke: var(--button-color);
+}

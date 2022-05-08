@@ -16,7 +16,7 @@ export class PokemonListaComponent implements OnInit {
 
   optionsNumItems: number[] = [10, 20, 30, 40, 50, 100, 150, 200];
   numItemsPage = 20;
-  
+
   constructor(private service: PokemonService) { }
 
   ngOnInit(): void {
@@ -37,22 +37,24 @@ export class PokemonListaComponent implements OnInit {
   }
 
   onPokemons(offset: number = 0): void {
+    this.pokemons = null;
     this.service.getInfoBasic(offset, this.numItemsPage).subscribe(
       (dataPage: any) => {
         this.pokemons = dataPage.results;
-        this.nextPage = dataPage.next?.split('offset=')[1].split('&limit=')[0];
-        this.previousPage = dataPage.previous?.split('offset=')[1].split('&limit=')[0];
+        this.nextPage = this.service.getNextPage();
+        this.previousPage = this.service.getPreviousPage();
       });
   }
 
   onSearch(param: string): void {
-    if(param) {
+    this.pokemons = null;
+    if (param) {
       this.nextPage = null;
       this.previousPage = null;
-        this.service.getOnSearch(param.toLowerCase().trim()).subscribe(
-          (dataPage: any) => {
-            this.pokemons = [dataPage];
-          });
+      this.service.getOnSearch(param.toLowerCase().trim()).subscribe(
+        (dataPage: any) => {
+          this.pokemons = [dataPage];
+        });
     }
     else {
       this.onPokemons();
