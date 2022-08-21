@@ -1,29 +1,40 @@
 # PokeapiAngular
 
-![Tela](./page_gif.gif)
+![Apresentação](./page_gif.gif)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
+### [Acessar a demonstração](https://pokeapi-angular-lucasluan01.vercel.app/)
 
-## Development server
+## 💻 Sobre o projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Site responsivo, construído a partir da API de Pokemóns que contém informações de todos os pokemóns. No site é possível escolher a quantidade de pokemóns exibidos por página, escolher entre os temas claro e escuro e pesquisar um pokemón pelo nome ou id.
 
-## Code scaffolding
+## 🛠 Tecnologias
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+As seguintes ferramentas foram usadas na construção do projeto:
 
-## Build
+- [Angular](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🧭 Rodando a aplicação
 
-## Running unit tests
+```bash
+# Clone este repositório
+$ git clone https://github.com/lucasluan01/pokeapi-angular
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Acesse a pasta do projeto no terminal/cmd
+$ cd pokeapi-angular
 
-## Running end-to-end tests
+# Instale as dependências
+$ npm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Execute a aplicação em modo de desenvolvimento
+$ ng serve --o
 
-## Further help
+# O servidor inciará na porta:4200 - acesse <http://localhost:4200/>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
+```
+
+## Autor
+
+Desenvolvido por Lucas Luan 💻 [Entre em contato!](https://www.linkedin.com/in/lucas-luan-dos-santos/)
